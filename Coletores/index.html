@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Solar para Piscinas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">CALCULADORA</a></li>
+            <li><a href="contato.html">CONTATO</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>CALCULADORA DE COLETORES SOLARES PARA PISCINAS</h1>
+        
+        <div class="calculator-section">
+            <div class="input-field">
+                <label for="brand">SELECIONE A MARCA</label>
+                <select id="brand" required>
+                    <option value="tsSolar">TS-SOLAR</option>
+                    <option value="komeco">KOMECO</option>
+                    <option value="solis">SOLIS</option>
+                    <option value="mastersol">MASTERSOL</option>
+                    <option value="girassol">GIRASSOL</option>
+                    <option value="soria">SORIA</option>
+                    <option value="tempersol">TEMPERSOL</option>
+                </select>
+            </div>
+
+            <h2>DIMENSÕES DA PISCINA</h2>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="length">COMPRIMENTO (METROS)</label>
+                    <input type="number" id="length" step="0.1" min="0" required>
+                </div>
+                <div class="input-field">
+                    <label for="width">LARGURA (METROS)</label>
+                    <input type="number" id="width" step="0.1" min="0" required>
+                </div>
+            </div>
+
+            <div class="checkbox-field">
+                <input type="checkbox" id="additionalHeating">
+                <label for="additionalHeating">ADICIONAR 30% PARA AQUECIMENTO EXTRA</label>
+                <div class="tooltip">?
+                    <span class="tooltip-text">Recomendado para piscinas com:
+                        • Prainha
+                        • Cascata
+                        • Encanamento longo
+                        • Região fria</span>
+                </div>
+            </div>
+
+            <button class="calculate-btn" onclick="calculateCollectors()">CALCULAR</button>
+            <p id="areaResult"></p>
+        </div>
+
+        <div id="results">
+            <div class="brand-section" id="brandResults">
+                <h3 class="brand-title" id="selectedBrandTitle"></h3>
+                <div id="calculationResults"></div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p>NOTA: TODOS OS CÁLCULOS SÃO ESTIMADOS. RECOMENDAMOS SEMPRE CONSULTAR O MANUAL DA EMPRESA FABRICANTE PARA GARANTIR A PRECISÃO DOS DADOS PARA SEU PROJETO ESPECÍFICO.</p>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
